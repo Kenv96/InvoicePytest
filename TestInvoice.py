@@ -24,3 +24,14 @@ def test_CanCalculateTotalDiscount(invoice, products):
 def test_CanCalculateTotalPurePrice(invoice, products):
     invoice.totalPurePrice(products)
     assert invoice.totalPurePrice(products) == 69.38
+
+def test_CanCalculateRemainingCost(invoice, products):
+    amountPaid = 20.38
+    invoice.remainingCost(products, amountPaid)
+    assert invoice.remainingCost(products, amountPaid) == 49.00
+
+def test_CanCalculateAmountToPayPerMonth(invoice, products):
+    months = 15
+    invoice.paymentPerMonth(products, months)
+    assert invoice.paymentPerMonth(products, months) == 5
+

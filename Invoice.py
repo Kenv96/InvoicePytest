@@ -50,3 +50,15 @@ class Invoice:
                 continue
             else:
                 return userInput
+
+
+    def remainingCost(self, products, amountPaid):
+        remaining_cost = float(self.totalPurePrice(products) - float(amountPaid))
+        return remaining_cost
+
+
+    def paymentPerMonth(self, products, monthsToPay):
+        payment_per_month = float(self.totalPurePrice(products) / monthsToPay)
+        payment_per_month = round(payment_per_month)
+        return payment_per_month
+
